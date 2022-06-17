@@ -1,0 +1,18 @@
+version: "3"
+services:
+    php:
+        build: install/php
+        ports:
+            - 80:80
+        restart: always
+        volumes:
+            - ./code:/var/www/html/
+            - ./install/php/php.ini:/usr/local/etc/php/php.ini
+    # phpmyadmin:
+    #     image: phpmyadmin/phpmyadmin
+    #     restart: always
+    #     ports:
+    #         - '8081:80'
+    #     environment:
+    #         PMA_HOST: 0.0.0.0
+    #         MYSQL_ROOT_PASSWORD: nma@eform!!
